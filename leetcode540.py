@@ -24,10 +24,10 @@
 
 def single_num(nums: list):
     """
-        First solution
-        start time: 03:09
-        end time: 03:11
-        method complexity: Runtime 169 ms; Memory 23.8 MB
+    First solution
+    start time: 03:09
+    end time: 03:11
+    method complexity: Runtime 169 ms; Memory 23.8 MB
     """
     odd_flag = True
     if len(nums) > 1:
@@ -46,10 +46,10 @@ def single_num(nums: list):
 
 def single_num2(nums: list):
     """
-        Second solution
-        start time: 03:55
-        end time: 04:03
-        method complexity: Runtime 171 ms; Memory 23.6 MB
+    Second solution
+    start time: 03:55
+    end time: 04:03
+    method complexity: Runtime 171 ms; Memory 23.6 MB
     """
     if len(nums) == 1:
         return nums[0]
@@ -61,10 +61,10 @@ def single_num2(nums: list):
 
 def single_num3(nums: list):
     """
-        Third solution
-        start time: 04:08
-        end time: 05:18
-        method complexity: Runtime 165 ms; Memory 23.8 MB
+    Third solution
+    start time: 04:08
+    end time: 05:18
+    method complexity: Runtime 165 ms; Memory 23.8 MB
     """
     if len(nums) == 1:
         return nums[0]
