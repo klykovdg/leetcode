@@ -22,7 +22,7 @@
 """
 
 
-def single_num(nums: list):
+def single_num(nums: list) -> int:
     """
     First solution
     start time: 03:09
@@ -44,7 +44,7 @@ def single_num(nums: list):
     return first_cur_elm  # in case the searched elm will be the last one
 
 
-def single_num2(nums: list):
+def single_num2(nums: list) -> int:
     """
     Second solution
     start time: 03:55
@@ -59,7 +59,7 @@ def single_num2(nums: list):
     return nums[-1]  # in case the searched elm will be the last one
 
 
-def single_num3(nums: list):
+def single_num3(nums: list) -> int:
     """
     Third solution
     start time: 04:08

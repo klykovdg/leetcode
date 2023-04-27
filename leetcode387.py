@@ -17,7 +17,7 @@
 """
 
 
-def first_uniq_char(string: str):
+def first_uniq_char(string: str) -> int:
     """
     start time: 23:04
     end time: 23:38

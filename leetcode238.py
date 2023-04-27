@@ -17,7 +17,7 @@
 """
 
 
-def pes(nums: list):
+def pes(nums: list) -> list[int]:
     """
     start time: 13:00
     end time: 14:00
@@ -34,7 +34,7 @@ def pes(nums: list):
     return arr
 
 
-def pes2(nums: list):
+def pes2(nums: list) -> list[int]:
     """
     I've watched the video https://www.youtube.com/watch?v=bNvIQI2wAjk
     """

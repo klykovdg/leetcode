@@ -34,7 +34,7 @@
 """
 
 
-def pivot_id(nums: list):
+def pivot_id(nums: list) -> int:
     """
     start time: 12:30
     end time: 12:43

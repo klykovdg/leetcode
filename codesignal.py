@@ -19,7 +19,7 @@ The 4th bit is 0 already (looks like the Mad Coder forgot to encrypt this number
 """
 
 
-def solution(n: int, k: int):
+def solution(n: int, k: int) -> int:
     """
     start time: 00:32
     end time: 00:41
@@ -27,9 +27,10 @@ def solution(n: int, k: int):
     if n == 0:
         return 0
     reversed_k = -k
-    s = list(bin(n))
-    s[reversed_k] = '0'
-    return int(''.join(s), 2)
+    bits = list(bin(n))
+    bits[reversed_k] = '0'
+
+    return int(''.join(bits), 2)
 
 
 if __name__ == '__main__':

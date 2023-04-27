@@ -33,23 +33,23 @@ class TreeNode:
 
 
 def print_traversal(cur: TreeNode, result: list):
-    if cur.left:
+    if cur.left is not None:
         result.append(cur.left.val)
-    if cur.right:
+    if cur.right is not None:
         result.append(cur.right.val)
-    if cur.left:
+    if cur.left is not None:
         print_traversal(cur.left, result)
-    if cur.right:
+    if cur.right is not None:
         print_traversal(cur.right, result)
 
 
-def merge_trees(root1: TreeNode, root2: TreeNode):
+def merge_trees(root1: TreeNode, root2: TreeNode) -> TreeNode | None:
     """
     start time: 13:30
     end time: 14:23
     method complexity: Runtime 97 ms; Memory 15.8 MB
     """
-    if root1 and root2:
+    if root1 is not None and root2 is not None:
         result = TreeNode()
         result.val = root1.val + root2.val
         traversal(result, root1, root2)
@@ -62,39 +62,39 @@ def traversal(result_cur, cur1, cur2):
     do_node(result_cur, cur1.left, cur2.left, True)
     do_node(result_cur, cur1.right, cur2.right, False)
 
-    if cur1.left and cur2.left:
+    if cur1.left is not None and cur2.left is not None:
         traversal(result_cur.left, cur1.left, cur2.left)
-    if cur1.right and cur2.right:
+    if cur1.right is not None and cur2.right is not None:
         traversal(result_cur.right, cur1.right, cur2.right)
 
 
 def do_node(result_cur: TreeNode, cur1: TreeNode, cur2: TreeNode, is_left):
     if is_left:
-        if cur1 and cur2:
+        if cur1 is not None and cur2 is not None:
             result_cur.left = TreeNode(cur1.val + cur2.val)
         else:
             cur = cur1 or cur2
-            if cur:
+            if cur is not None:
                 result_cur.left = TreeNode(cur.val)
                 copy_traversal(result_cur.left, cur)
     else:
-        if cur1 and cur2:
+        if cur1 is not None and cur2 is not None:
             result_cur.right = TreeNode(cur1.val + cur2.val)
         else:
             cur = cur1 or cur2
-            if cur:
+            if cur is not None:
                 result_cur.right = TreeNode(cur.val)
                 copy_traversal(result_cur.right, cur)
 
 
 def copy_traversal(result_cur: TreeNode, cur: TreeNode):
-    if cur.left:
+    if cur.left is not None:
         result_cur.left = TreeNode(cur.left.val)
-    if cur.right:
+    if cur.right is not None:
         result_cur.right = TreeNode(cur.right.val)
-    if cur.left:
+    if cur.left is not None:
         copy_traversal(result_cur.left, cur.left)
-    if cur.right:
+    if cur.right is not None:
         copy_traversal(result_cur.right, cur.right)
 
 

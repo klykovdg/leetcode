@@ -15,7 +15,7 @@ class ListNode:
         self.next = next
 
 
-def has_cycle(head: ListNode):
+def has_cycle(head: ListNode) -> bool:
     """
     start time: 12:40
     end time: 12:52

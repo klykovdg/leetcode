@@ -24,7 +24,7 @@
 """
 
 
-def is_palindrome(s: str):
+def is_palindrome(s: str) -> bool:
     """
     start time: 14:20
     end time: 14:45

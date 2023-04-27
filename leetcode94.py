@@ -23,22 +23,22 @@ class TreeNode:
         self.right = right
 
 
-def inorder_traversal(root: TreeNode):
+def inorder_traversal(root: TreeNode) -> list[int]:
     """
     start time: 19:45
     end time: 20:00
     method complexity: Runtime 34 ms; Memory 13.8 MB
     """
     result = []
-    if root:
+    if root is not None:
         result.append(root.val)
         traversal(root, result)
     return result
 
 
 def traversal(cur: TreeNode, result: list):
-    if cur.left:
+    if cur.left is not None:
         traversal(cur.left, result)
     result.append(cur.val)
-    if cur.right:
+    if cur.right is not None:
         traversal(cur.right, result)

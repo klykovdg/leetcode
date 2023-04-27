@@ -33,7 +33,7 @@ class ListNode:
         return str(result)
 
 
-def insertion_sort_list(head: ListNode):
+def insertion_sort_list(head: ListNode) -> ListNode:
     """
     start time: 13:27
     end time: 15:17
@@ -68,7 +68,7 @@ def insertion_sort_list(head: ListNode):
     return head
 
 
-def insertion_sort_list2(head: ListNode):
+def insertion_sort_list2(head: ListNode) -> ListNode:
     """
     start time: 21:56
     end time: 22:19
@@ -93,7 +93,7 @@ def insertion_sort_list2(head: ListNode):
     return p[0]
 
 
-def find(arr: list, node: ListNode):
+def find(arr: list, node: ListNode) -> int:
     left = -1
     right = len(arr)
     while right - left > 1:

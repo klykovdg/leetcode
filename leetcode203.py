@@ -46,16 +46,16 @@ def remove_elments(head: Optional[ListNode], val):
     """
     prev = None
     cur = head
-    while cur:
+    while cur is not None:
         if cur.val != val:
             prev = cur
             cur = cur.next
         else:
-            if cur.next:
+            if cur.next is not None:
                 cur.val = cur.next.val
                 cur.next = cur.next.next
             else:
-                if prev:
+                if prev is not None:
                     prev.next = None
                 else:
                     head = None

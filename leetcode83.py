@@ -27,14 +27,14 @@ class ListNode:
     def __str__(self):
         result = []
         cur = self
-        while cur:
+        while cur is not None:
             result.append(cur.val)
             cur = cur.next
 
         return str(result)
 
 
-def del_duplicates(head: ListNode):
+def del_duplicates(head: ListNode) -> ListNode:
     """
     start time: 20:16
     end time: 20:23
@@ -42,16 +42,16 @@ def del_duplicates(head: ListNode):
     """
     prev = None
     cur = head
-    while cur:
+    while cur is not None:
         if prev is None or cur.val != prev.val:
             prev = cur
             cur = cur.next
         else:
-            if cur.next:
+            if cur.next is not None:
                 cur.val = cur.next.val
                 cur.next = cur.next.next
             else:
-                if prev:
+                if prev is not None:
                     prev.next = None
                 else:
                     head = None

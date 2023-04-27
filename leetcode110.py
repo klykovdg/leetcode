@@ -25,41 +25,42 @@ class TreeNode:
         self.right = right
 
 
-def is_balanced(root: TreeNode):
+def is_balanced(root: TreeNode) -> bool:
     """
     start time: 15:00
     end time: 16: 30
     method complexity: Runtime 43 ms; Memory 18.7 MB
     """
-    if root:
+    if root is not None:
         if traversal(root) == -1:
             return False
     return True
 
 
-def traversal(cur: TreeNode):
-    if cur.left:
+def traversal(cur: TreeNode) -> int:
+    if cur.left is not None:
         if traversal(cur.left) == -1:
             return -1
-    if cur.right:
+    if cur.right is not None:
         if traversal(cur.right) == -1:
             return -1
     find_depth(cur)
     if check(cur) == -1:
         return -1
+    return 1
 
 
 def find_depth(cur: TreeNode):
-    if not cur.left and not cur.right:
+    if cur.left is None and cur.right is None:
         cur.depth = 0
-    elif cur.left and cur.right:
+    elif cur.left is not None and cur.right is not None:
         cur.depth = max(cur.left.depth, cur.right.depth) + 1
     else:
         node = cur.left or cur.right
         cur.depth = node.depth + 1
 
 
-def check(cur: TreeNode):
+def check(cur: TreeNode) -> int:
     l = cur.left.depth + 1 if cur.left else 0
     r = cur.right.depth + 1 if cur.right else 0
     if abs(l - r) > 1:

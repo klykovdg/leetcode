@@ -17,7 +17,7 @@
 """
 
 
-def single_num(nums: list):
+def single_num(nums: list) -> int:
     """
     First solution
     start time: 18:06
@@ -34,7 +34,7 @@ def single_num(nums: list):
     return s.pop()
 
 
-def single_num2(nums: list):
+def single_num2(nums: list) -> int:
     """
     Second solution
     start time: 18:45

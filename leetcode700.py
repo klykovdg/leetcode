@@ -22,13 +22,13 @@ class TreeNode:
         self.right = right
 
 
-def search(root: TreeNode, val: int):
+def search(root: TreeNode, val: int) -> TreeNode | None:
     """
     start time: 19:24
     end time: 19:38
     method complexity: Runtime 78 ms; Memory 16.4 MB
     """
-    if root:
+    if root is not None:
         if root.val == val:
             return root
         return traversal(root, val)
@@ -37,12 +37,12 @@ def search(root: TreeNode, val: int):
 
 def traversal(cur: TreeNode, val: int):
     for node in cur.left, cur.right:
-        if node:
+        if node is not None:
             if node.val == val:
                 return node
 
     for node in cur.left, cur.right:
-        if node:
+        if node is not None:
             result = traversal(node, val)
             if result is not None:
                 return result

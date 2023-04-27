@@ -27,7 +27,7 @@ class ListNode:
         return str(result)
 
 
-def reverse(head: ListNode):
+def reverse(head: ListNode) -> ListNode:
     """
     start time: 21:15
     end time: 21:25
@@ -35,8 +35,8 @@ def reverse(head: ListNode):
     """
     prev = None
     cur = head
-    while cur:
-        if prev:
+    while cur is not None:
+        if prev is not None:
             cur.next, prev, cur = prev, cur, cur.next
             # temp = cur.next
             # cur.next = prev

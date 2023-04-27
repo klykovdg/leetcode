@@ -21,13 +21,13 @@ class TreeNode:
         self.right = right
 
 
-def max_depth(root: TreeNode):
+def max_depth(root: TreeNode) -> int:
     """
     start time: 20:53
     end time: 21:05
     method complexity: Runtime 42 ms; Memory 16.4 MB
     """
-    if root:
+    if root is not None:
         max_dep = [1,]
         depth = 1
         traversal(root, depth, max_dep)
@@ -36,11 +36,11 @@ def max_depth(root: TreeNode):
 
 
 def traversal(cur: TreeNode, depth, max_dep):
-    if cur.left:
+    if cur.left is not None:
         traversal(cur.left, depth + 1, max_dep)
     if depth > max_dep[0]:
         max_dep[0] = depth
-    if cur.right:
+    if cur.right is not None:
         traversal(cur.right, depth + 1, max_dep)
 
 

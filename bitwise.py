@@ -1,4 +1,4 @@
-from math import log2, ceil
+import math
 """
 1. For any number, we can check whether its ‘i’th bit is 0(OFF)
    or 1(ON) by bitwise ANDing it with “2^i” (2 raise to i).
@@ -12,7 +12,7 @@ from math import log2, ceil
 """
 
 
-def count_number_1_in_binary_int(i: int):
+def count_number_1_in_binary_int(i: int) -> int:
     """
     start time: 15:00
     end time: 15:01
@@ -21,23 +21,23 @@ def count_number_1_in_binary_int(i: int):
     return bin(i).count('1')
 
 
-def count_number_1_in_binary_int2(i: int):
+def count_number_1_in_binary_int2(i: int) -> int:
     """
     start time: 15:01
     end time: 16:00
     method complexity: O(N)
     """
     result = 0
-    count_bit = ceil(log2(i + 1))
+    count_bit = math.ceil(math.log2(i + 1))
     for k in range(count_bit):  # O(N)
         p = pow(2, k)           # O(1)
-        if p & i:
+        if p & i != 0:  # p & i = p as current bit of "i" is 1 else 0
             result += 1
 
     return result
 
 
-def swap(i: int, pos1, pos2):
+def swap(i: int, pos1: int, pos2: int) -> int:
     """
     pos1 and pos2 are positive indexes
     from the right side of the binary repr of given int from 0
@@ -60,24 +60,22 @@ def swap(i: int, pos1, pos2):
     return int(result, 2)
 
 
-def swap2(x: int, p1, p2):
+def swap2(x: int, p1: int, p2: int) -> int:
     """
     Unfortunately, I never work with bits
     From https://www.geeksforgeeks.org/swap-bits-in-a-given-number/
     """
-    s = bin(x)
     n = p2 - 1 - p1
     set1 = (x >> p1) & ((1 << n) - 1)
     set2 = (x >> p2) & ((1 << n) - 1)
     xor = (set1 ^ set2)
     xor = (xor << p1) | (xor << p2)
     result = x ^ xor
-    s2 = bin(result)
 
     return result
 
 
-def xor_without_xor(i1: int, i2: int):
+def xor_without_xor(i1: int, i2: int) -> int:
     """
     start time: 17:25
     end time: 18:11

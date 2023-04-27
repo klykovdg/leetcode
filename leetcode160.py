@@ -73,7 +73,7 @@ class ListNode:
         return str(self.val)
 
 
-def get_intersection_node(head1: ListNode, head2: ListNode):
+def get_intersection_node(head1: ListNode, head2: ListNode) -> ListNode:
     """
     start time: 20:36
     end time: 20:50
